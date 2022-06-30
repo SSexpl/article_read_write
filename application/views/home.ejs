@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    .whole
+{
+    background: linear-gradient(110deg, rgb(249, 100, 125) 60%, rgb(54, 155, 233) 60%);
+    min-height: 650px;
+    padding: 10px;
+}
+  </style>
+</head>
+<body>
+    <%- include('./header.ejs'); %>
+    <div class="whole">
+    <h1 style="color:white ;">HOME</h1>
+    <p><%-homehead %></p>
+   
+
+    <ul>
+        <% for(var i=0;i<items.length;i++){ %>
+            <div class="con">
+            <% var d= items[i]; %>
+            <% console.log(d); %>
+            <li>
+                <dl>
+                <dt><h1><%- items[i].title %></h1></dt>
+                <dd> <%= items[i].data.substring(0,100)+"..." %>
+                    <a href="/<%-items[i].title %>">readmore</a>
+                </dd>
+            </dl>
+            </li>
+        </div>
+       <% } %>
+        
+    </ul>
+
+</div>
+    <%- include('./footer.ejs'); %>
+</body>
+</html>

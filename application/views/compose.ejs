@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+.adjust
+        {
+            min-height: 600px;
+            padding: 10px;
+            background: linear-gradient(110deg,rgba(133, 40, 40, 0.887) 60%, rgb(245, 245, 96) 60%);
+        }
+    </style>
+    
+   <script >
+   function validate()
+    { var t= document.test.title.value;
+      var d=document.test.data.value;
+      if(t==="" || d==="")
+      {
+       alert("please enter all fields");
+        return false;
+      }
+      else
+      {return true;}
+    }</script>
+  </head>
+<body>
+    <%- include('./header.ejs'); %>
+    <div class="adjust">
+    
+    <h1>COMPOSE</h1>
+    <form name="test" action="/compose" onsubmit=' return validate()' method="post" >
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">TITLE</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title" name="title">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">ENTER DATA</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="data" name="data"></textarea>
+          </div>
+        <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+    <%- include('./footer.ejs'); %>
+</body>
+</html>

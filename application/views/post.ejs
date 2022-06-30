@@ -1,0 +1,45 @@
+<%- include('./header.ejs'); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .adjust
+      {
+          min-height: 600px;
+          padding: 20px;
+          background-image: url('images/five.jpg');
+          background-size: cover;
+          color: black;
+          display:flex;
+          justify-content: center;
+         
+      }
+      .content
+{
+    position: relative;
+    border-radius: 20px;
+    border:1px solid black;
+    padding:20px;
+    background: rgba(255,255,255,0.5);
+    margin:10px;
+    min-height: 450px;
+    font-size: 20px;
+}
+  </style>
+
+</head>
+</head>
+<body>
+  <div class="adjust">
+    <div class="content">
+    <h1><%- heading %></h1>
+    
+  <p>  <%- content %></p>
+</div>
+</div>
+</body>
+</html>
