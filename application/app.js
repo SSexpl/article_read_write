@@ -51,24 +51,45 @@ var titlename=req.body.title;
  .catch(err => {
    console.error(err)
  })
-  res.redirect('/');
+  res.redirect('/view');
  
 });
 
-app.get('/:topic', (req, res) => {
-  var title= req.params.topic;
-  enteries.findOne({title:title},function(err,ans)
+app.get('/open:id', (req, res) => {
+  var id= req.params.id;
+  enteries.findOne({_id:id},function(err,ans)
   {
     if(err)
     console.log(err);
     else
     res.render('post.ejs',{heading:ans.title,content:ans.data});
-  })
-  
-    
-  
-
+  });
 });
+app.get('/view',(req,res)=>
+{
+  enteries.find(function(err,result)
+  {
+      if(err)
+      console.log(err);
+      else
+      res.render("view.ejs",{homehead:homeStartingContent,items:result});
+  });
+});
+app.get('/delete/:id',(req,res) => {
+  const id=req.params.id;
+  
+  enteries.findByIdAndRemove(id, function(err){
+    if(err){
+       console.log(err);
+    } else {
+     // alert ("are you sure you want to delete");
+       res.redirect('/view');
+    }
+ });
+});
+
+
+
 
 
 
