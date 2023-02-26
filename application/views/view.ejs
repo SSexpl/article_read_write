@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    .whole
+{
+    background: linear-gradient(110deg, rgb(24, 18, 19) 60%, rgb(9, 11, 12) 60%);
+    min-height: 650px;
+    padding: 10px;
+}
+  </style>
+</head>
+<body>
+    <%- include('./header.ejs'); %>
+    <div class="whole">
+    <h1 style="color:white ;">ALL ARTICLES</h1>
+    <p>List of all post</p>
+   
+
+    <ul>
+        <% for(var i=0;i<items.length;i++){ %>
+            <div class="con">
+            <% var d= items[i]; %>
+            <% console.log(d); %>
+            <li>
+                <dl>
+                <dt><h1><%- items[i].title %></h1></dt>
+                <dd> <%= items[i].data.substring(0,100)%>
+                    <a href="/delete/<%-items[i]._id%>"><button>Delete</button></a>
+                </dd>
+            </dl>
+            </li>
+        </div>
+       <% } %>
+        
+    </ul>
+
+</div>
+    <%- include('./footer.ejs'); %>
+</body>
+</html>
