@@ -5,4 +5,5 @@ and allows users to view all the article and read the one they want.
 
 admin
 ![image](https://user-images.githubusercontent.com/87913198/221428557-33cd7d7f-141e-4ca5-ba38-059b0af358dd.png)
+User
 ![image](https://user-images.githubusercontent.com/87913198/221428652-5a006f9c-1bfd-4071-9952-53804fad3cde.png)
